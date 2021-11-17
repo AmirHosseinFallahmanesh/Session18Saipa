@@ -25,6 +25,13 @@ namespace demo.Controllers
             return Content(lc.ToString());
         }
 
+        public IActionResult GetInfo()
+        {
+            return Json(new Student() { Name = "amir", Surname = "amiri" });
+        }
+
+
+
         public IActionResult Privacy()
         {
             return View();
@@ -35,5 +42,10 @@ namespace demo.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+    }
+    class Student
+    {
+        public string Name { get; set; }
+        public string Surname { get; set; }
     }
 }
